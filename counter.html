@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Counter App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #count {
+      font-size: 48px;
+      margin: 20px 0;
+      color: #007acc;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      background: #007acc;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #005fa3;
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    .reset {
+      background: #e74c3c;
+    }
+
+    .reset:hover {
+      background: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Counter App</h1>
+    <div id="count">0</div>
+    <button id="increase">Increase</button>
+    <button id="decrease">Decrease</button>
+    <button id="reset" class="reset">Reset</button>
+  </div>
+
+  <script>
+    let count = 0;
+    const countDisplay = document.getElementById("count");
+    const increaseBtn = document.getElementById("increase");
+    const decreaseBtn = document.getElementById("decrease");
+    const resetBtn = document.getElementById("reset");
+
+    increaseBtn.addEventListener("click", () => {
+      count++;
+      countDisplay.textContent = count;
+    });
+
+    decreaseBtn.addEventListener("click", () => {
+      count--;
+      countDisplay.textContent = count;
+    });
+
+    resetBtn.addEventListener("click", () => {
+      count = 0;
+      countDisplay.textContent = count;
+    });
+  </script>
+</body>
+</html>
